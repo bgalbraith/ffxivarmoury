@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" lang="en-US">
+<head>
+    <title>{% block title %}FFXIV Achievements{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/history.css" />
+    {% block css %}{% endblock %}
+    {% block js %}{% endblock %}
+</head>
+<body>
+<div id="content">
+<div id="nav">
+<div id="nav-charatcers">
+{% for character in characters %}
+    {% if forloop.counter0 > 0 %} | {% endif %}
+    <a href="/history/{{ type }}/{{ character.id }}">{{ character.name }}</a>
+{% endfor %}
+</div>
+<div id="nav-types">
+    {% for type in types %}
+    {% if forloop.counter0 > 0 %} | {% endif %}
+    <a href="/history/{{ type.type|lower }}/{{ character.id }}">{{ type.type }}</a>
+{% endfor %}
+</div>
+</div>
+{% block content %}
+{% endblock %}
+</div>
+</body>
+</html>

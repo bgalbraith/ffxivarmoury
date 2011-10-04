@@ -1,0 +1,41 @@
+{% extends "history/base.html" %}
+
+{% block title %}FFXIV Achievements | Guild {% endblock %}
+
+{% block content %}
+<p style="font-size:small;"><a href="/history/guild/1">Zephan</a> | <a href="/history/guild/2">Arina</a> | <a href="/history/guild/3">Tyler</a> | <a href="/history/guild/4">Teia</a> | <a href="/history/guild/5">Miyuki</a></p>
+<p style="font-size:small;"><a href="/history/aetheryte/{{ character.id }}">Aetheryte</a> | <a href="/history/guild/{{ character.id }}">Guild</a> | <a href="/history/quest/{{ character.id }}">Quest</a> | <a href="/history/guildleve/{{ character.id }}">Guildleve</a> | <a href="/history/combat/{{ character.id }}">Combat</a> | <a href="/history/special/{{ character.id }}">Special</a></p>
+<h1>{{ character.name }} ({{ count }}/{{ total }})</h1>
+<table cellpadding="0" cellspacing="5">
+<tr>
+{% for guild in guilds %}
+    {% if forloop.counter0|divisibleby:'2' %}</tr><tr>{% endif %}
+    <td valign="top">
+        <div id="guild-{{ guild.id }}" class="guild">
+            <div class="guild-header">{{ guild.name }} ({{ guild.achieved }}/{{ guild.count }})</div>
+            <div class="guild-body">
+                <div class="guild-ranks">
+                    <ul>
+                    {% for rank in guild.ranks %}
+                        <li class="{{ rank.css_class }}" title="{{ rank.label }}">&nbsp;</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="guild-quests">
+                    {% for quest in guild.quests %}
+                        <div class="{{ quest.css_class }}"><div class="icon">&nbsp;</div><span class="label">{{ quest.label }}</span></div>
+                    {% endfor %}
+                </div>
+                <div class="guild-purchases">
+                    {% for purchase in guild.purchases %}
+                        <div class="{{ purchase.css_class }}"><div class="icon">&nbsp;</div><span class="label">{{ purchase.label }}</span></div>
+                    {% endfor %}
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </td>
+{% endfor %}
+</tr>
+</table>
+{% endblock %}

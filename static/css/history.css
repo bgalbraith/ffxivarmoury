@@ -1,0 +1,256 @@
+/* Facade */
+body {
+    background-color: #999999;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size: 11px;
+}
+#content {
+    width: 820px;
+    margin: auto;
+    background-color: #FFF;
+    padding: 0px;
+}
+
+/* Aetheryte */
+.zone {
+    width: 230px;
+    border: 1px solid #000;
+}
+
+.zone-header {
+    background: url("/static/img/blue_texture.png") no-repeat;
+    color: #FFF;
+    padding-left: 5px;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.zone-complete {
+    color: #000;
+    background: url("/static/img/brass_texture.png") no-repeat;
+}
+
+.zone-body {
+    color: #999;
+}
+
+.event {
+    background: url("/static/img/aetheryte.png") no-repeat scroll 0px -32px transparent;
+    padding-left: 32px;
+    line-height: 32px;
+    margin: 3px 12px;
+}
+
+.camp {
+    background-position: 0 0;
+    margin-left: 0;
+}
+
+.achieved {
+    color: #000;
+}
+
+/* Guilds */
+
+.guild {
+    width: 400px;
+    border: 1px solid #000;
+}
+
+.guild-header {
+    background: url("/static/img/orange_texture.png") no-repeat;
+    color: #FFF;
+    padding-left: 5px;
+    line-height: 26px;
+}
+
+div.guild-ranks ul {
+    list-style: none;
+    padding-top: 5px;
+    padding-left: 8px;
+    margin: 0;
+}
+div.guild-ranks li {
+    background: url("/static/img/guild_sprites.png") no-repeat;
+    margin-right: 7px;
+    width: 32px;
+    line-height: 32px;
+    float: left;
+}
+
+div.guild-quests {
+    float: left;
+    width: 247px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+div.guild-purchases {
+    float: right;
+    width: 145px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+div.icon {
+    background: url("/static/img/guild_sprites.png") no-repeat;
+    width: 32px;
+    line-height: 32px;
+    float: left;
+}
+span.label { margin-left: 5px; line-height: 32px; }
+div.guild-quest { color: #999; clear:both; }
+div.guild-quest .icon { background-position: 0 -608px; }
+div.guild-purchase { color: #999; clear: both; }
+div.guild-purchase .icon { background-position: 0 -640px; }
+div.guild-quest-achieved { color: #000; clear: both; }
+div.guild-quest-achieved .icon { background-position: -32px -608px; }
+div.guild-purchase-achieved { color: #000; clear: both; }
+div.guild-purchase-achieved .icon { background-position: -32px -640px; }
+
+ul li.pgl-rank { background-position: 0 0; }
+ul li.gla-rank { background-position: 0 -32px; }
+ul li.mrd-rank { background-position: 0 -64px; }
+ul li.arc-rank { background-position: 0 -96px; }
+ul li.lnc-rank { background-position: 0 -128px; }
+ul li.thm-rank { background-position: 0 -160px; }
+ul li.con-rank { background-position: 0 -192px; }
+ul li.crp-rank { background-position: 0 -224px; }
+ul li.bsm-rank { background-position: 0 -256px; }
+ul li.arm-rank { background-position: 0 -288px; }
+ul li.gld-rank { background-position: 0 -320px; }
+ul li.tan-rank { background-position: 0 -352px; }
+ul li.wvr-rank { background-position: 0 -384px; }
+ul li.alc-rank { background-position: 0 -416px; }
+ul li.cul-rank { background-position: 0 -448px; }
+ul li.min-rank { background-position: 0 -480px; }
+ul li.btn-rank { background-position: 0 -512px; }
+ul li.fsh-rank { background-position: 0 -544px; }
+ul li.stn-rank { background-position: 0 -576px; }
+
+ul li.pgl-rank-achieved { background-position: -32px 0; }
+ul li.gla-rank-achieved { background-position: -32px -32px; }
+ul li.mrd-rank-achieved { background-position: -32px -64px; }
+ul li.arc-rank-achieved { background-position: -32px -96px; }
+ul li.lnc-rank-achieved { background-position: -32px -128px; }
+ul li.thm-rank-achieved { background-position: -32px -160px; }
+ul li.con-rank-achieved { background-position: -32px -192px; }
+ul li.crp-rank-achieved { background-position: -32px -224px; }
+ul li.bsm-rank-achieved { background-position: -32px -256px; }
+ul li.arm-rank-achieved { background-position: -32px -288px; }
+ul li.gld-rank-achieved { background-position: -32px -320px; }
+ul li.tan-rank-achieved { background-position: -32px -352px; }
+ul li.wvr-rank-achieved { background-position: -32px -384px; }
+ul li.alc-rank-achieved { background-position: -32px -416px; }
+ul li.cul-rank-achieved { background-position: -32px -448px; }
+ul li.min-rank-achieved { background-position: -32px -480px; }
+ul li.btn-rank-achieved { background-position: -32px -512px; }
+ul li.fsh-rank-achieved { background-position: -32px -544px; }
+ul li.stn-rank-achieved { background-position: -32px -576px; }
+
+.guild-group-body {
+    color: #999;
+}
+
+.guild-event {
+    line-height: 32px;
+    margin: 3px 12px;
+}
+
+.quest-group {
+    width: 300px;
+    border: 1px solid #000;
+}
+
+.quest-group-header {
+    background: url("/static/img/green_texture.png") no-repeat;
+    color: #FFF;
+    padding-left: 10px;
+    line-height: 26px;
+}
+
+.quest-group-complete {
+    color: #000;
+    background: url("/static/img/brass_texture.png") no-repeat;
+}
+
+.quest-group-body {
+    color: #999;
+}
+
+.quest-event {
+    line-height: 32px;
+    margin: 3px 12px;
+}
+
+.guildleve-group {
+    width: 300px;
+    border: 1px solid #000;
+}
+
+.guildleve-group-header {
+    background: url("/static/img/yellow_texture.png") no-repeat;
+    color: #FFF;
+    padding-left: 10px;
+    line-height: 26px;
+}
+
+.guildleve-group-complete {
+    color: #000;
+    background: url("/static/img/brass_texture.png") no-repeat;
+}
+
+.guildleve-group-body {
+    color: #999;
+}
+
+.guildleve-event {
+    line-height: 32px;
+    margin: 3px 12px;
+}
+
+.combat-group {
+    width: 300px;
+    border: 1px solid #000;
+}
+
+.combat-group-header {
+    background: url("/static/img/red_texture.png") no-repeat;
+    color: #FFF;
+    padding-left: 10px;
+    line-height: 26px;
+}
+
+.combat-group-complete {
+    color: #000;
+    background: url("/static/img/brass_texture.png") no-repeat;
+}
+
+.combat-group-body {
+    color: #999;
+}
+
+.combat-event {
+    line-height: 32px;
+    margin: 3px 12px;
+}
+
+.special-group {
+    width: 300px;
+    border: 1px solid #000;
+}
+
+.special-group-header {
+    background: url("/static/img/purple_texture.png") no-repeat;
+    color: #FFF;
+    padding-left: 10px;
+    line-height: 26px;
+}
+
+.special-group-body {
+    color: #000;
+}
+
+.special-event {
+    line-height: 32px;
+    margin: 3px 12px;
+}

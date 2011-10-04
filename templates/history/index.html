@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" lang="en-US">
+<head>
+    <title>FFXIV Achievements</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/history.css" />
+</head>
+<body>
+{% for character in characters %}
+    <h1><a href="/history/aetheryte/{{ character.id }}">{{ character.name }} ({{ character.world }})</a> [{{ character.count }}/{{ total }}]</h1>
+{% endfor %}
+</body>
+</html>

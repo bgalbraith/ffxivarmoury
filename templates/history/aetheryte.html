@@ -1,0 +1,49 @@
+{% extends "history/base.html" %}
+
+{% block title %}FFXIV Achievements | Aetheryte{% endblock %}
+{% comment %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        /*
+        $(window).load(function() {
+            $(".zone-header").click(function() {
+                if($(this).hasClass('open')) {
+                    $(this).next(".zone-body").slideUp();
+                    $(this).removeClass('open');
+                } else {
+                    $(this).next(".zone-body").slideDown();
+                    $(this).addClass('open');
+                }
+
+            });
+        });
+        */
+    </script>
+{% endcomment %}
+
+{% block content %}
+<h1>{{ character.name }} ({{ count }}/{{ total }})</h1>
+<table cellpadding="0" cellspacing="5">
+{% for zone in events %}
+    <tr><td><h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4></td></tr>
+    <tr>
+    {% for sub in zone.subs %}
+        <td valign="top">
+        <div class="zone">
+        {% if sub.achieved == sub.count %}
+            <div id="zone-header-{{ sub.id }}" class="zone-header zone-complete">{{ sub.name }} <img style="float:right; padding-right:10px; margin-top:3px;" src="/static/img/brass_gobcog.png" /></div>
+        {% else %}
+            <div id="zone-header-{{ sub.id }}" class="zone-header">{{ sub.name }} <span style="float:right; padding-right:10px;">{{ sub.achieved }}/{{ sub.count }}</span></div>
+        {% endif %}
+        <div id="zone-{{ sub.id }}" class="zone-body">
+        {% for event in sub.events %}
+            <div id="event-{{ event.id }}" class="{{ event.event_class }}">{{ event.label }}</div>
+        {% endfor %}
+        </div>
+        </div>
+        </td>
+    {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}

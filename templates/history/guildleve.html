@@ -1,0 +1,32 @@
+{% extends "history/base.html" %}
+
+{% block title %}FFXIV Achievements | Guildleve{% endblock %}
+
+{% block content %}
+<p style="font-size:small;"><a href="/history/guildleve/1">Zephan</a> | <a href="/history/guildleve/2">Arina</a> | <a href="/history/guildleve/3">Tyler</a> | <a href="/history/guildleve/4">Teia</a> | <a href="/history/guildleve/5">Miyuki</a></p>
+<p style="font-size:small;"><a href="/history/aetheryte/{{ character.id }}">Aetheryte</a> | <a href="/history/guild/{{ character.id }}">Guild</a> | <a href="/history/quest/{{ character.id }}">Quest</a> | <a href="/history/guildleve/{{ character.id }}">Guildleve</a> | <a href="/history/combat/{{ character.id }}">Combat</a> | <a href="/history/special/{{ character.id }}">Special</a></p>
+<h1>{{ character.name }} ({{ count }}/{{ total }})</h1>
+<table cellpadding="0" cellspacing="5">
+{% for zone in events %}
+    <tr><td><h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4></td></tr>
+    <tr>
+    {% for sub in zone.subs %}
+        <td valign="top">
+        <div class="zone">
+        {% if sub.achieved == sub.count %}
+            <div id="guildleve-group-header-{{ sub.id }}" class="guildleve-group-header guildleve-group-complete">{{ sub.name }} <img style="float:right; padding-right:10px; margin-top:3px;" src="/static/img/brass_gobcog.png" /></div>
+        {% else %}
+            <div id="guildleve-group-header-{{ sub.id }}" class="guildleve-group-header">{{ sub.name }} <span style="float:right; padding-right:10px;">{{ sub.achieved }}/{{ sub.count }}</span></div>
+        {% endif %}
+        <div id="guildleve-group-{{ sub.id }}" class="guildleve-group-body">
+        {% for event in sub.events %}
+            <div id="guildleve-event-{{ event.id }}" class="{{ event.event_class }}">{{ event.label }}</div>
+        {% endfor %}
+        </div>
+        </div>
+        </td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
