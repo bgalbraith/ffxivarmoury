@@ -11,6 +11,9 @@ def index(request):
     total = Event.objects.count() - 8
     return render_to_response('history/index.html', { 'characters' : characters, 'total' : total })
 
+def root(request):
+    return render_to_response('history/root.html', {})
+
 def events(request, type_name, character_id):
     try:
         type = EventType.objects.get(type=type_name)
