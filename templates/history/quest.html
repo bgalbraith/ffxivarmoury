@@ -3,15 +3,17 @@
 {% block title %}FFXIV Achievements | Quest{% endblock %}
 
 {% block content %}
-<p style="font-size:small;"><a href="/history/quest/1">Zephan</a> | <a href="/history/quest/2">Arina</a> | <a href="/history/quest/3">Tyler</a> | <a href="/history/quest/4">Teia</a> | <a href="/history/quest/5">Miyuki</a></p>
-<p style="font-size:small;"><a href="/history/aetheryte/{{ character.id }}">Aetheryte</a> | <a href="/history/guild/{{ character.id }}">Guild</a> | <a href="/history/quest/{{ character.id }}">Quest</a> | <a href="/history/guildleve/{{ character.id }}">Guildleve</a> | <a href="/history/combat/{{ character.id }}">Combat</a> | <a href="/history/special/{{ character.id }}">Special</a></p>
-<h1>{{ character.name }} ({{ count }}/{{ total }})</h1>
-<table cellpadding="0" cellspacing="5">
+<div class="grid_12">
+<h3>Quest ({{ count }}/{{ total }})</h3>
+</div>
+<div class="clear"></div>
 {% for zone in events %}
-    <tr><td><h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4></td></tr>
-    <tr>
+    <div class="grid_12">
+    <h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4>
+    </div>
+    <div class="clear"></div>
     {% for sub in zone.subs %}
-        <td valign="top">
+        <div class="grid_3">
         <div class="zone">
         {% if sub.achieved == sub.count %}
             <div id="quest-group-header-{{ sub.id }}" class="quest-group-header quest-group-complete">{{ sub.name }} <img style="float:right; padding-right:10px; margin-top:3px;" src="/static/img/brass_gobcog.png" /></div>
@@ -24,9 +26,8 @@
         {% endfor %}
         </div>
         </div>
-        </td>
-        {% endfor %}
-    </tr>
+        </div>
+    {% endfor %}
+    <div class="clear"></div>
 {% endfor %}
-</table>
 {% endblock %}

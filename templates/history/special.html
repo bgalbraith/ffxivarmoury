@@ -3,15 +3,18 @@
 {% block title %}FFXIV Achievements | Special{% endblock %}
 
 {% block content %}
-
-<p style="font-size:small;"><a href="/history/aetheryte/{{ character.id }}">Aetheryte</a> | <a href="/history/guild/{{ character.id }}">Guild</a> | <a href="/history/quest/{{ character.id }}">Quest</a> | <a href="/history/guildleve/{{ character.id }}">Guildleve</a> | <a href="/history/combat/{{ character.id }}">Combat</a> | <a href="/history/special/{{ character.id }}">Special</a></p>
-<h1>{{ character.name }}</h1>
-<table cellpadding="0" cellspacing="5">
+<div class="grid_12">
+<h3>Special ({{ count }})</h3>
+</div>
+<div class="clear"></div>
 {% for zone in events %}
-    <tr><td><h4>{{ zone.name }}</h4></td></tr>
-    <tr>
+    <div class="grid_12">
+    <h4>{{ zone.name }} ({{ zone.achieved }})</h4>
+    </div>
+    <div class="clear"></div>
+
     {% for sub in zone.subs %}
-        <td valign="top">
+        <div class="grid_3">
         <div class="zone">
         <div id="special-group-header-{{ sub.id }}" class="special-group-header">{{ sub.name }}</div>
         <div id="special-group-{{ sub.id }}" class="special-group-body">
@@ -20,9 +23,8 @@
         {% endfor %}
         </div>
         </div>
-        </td>
+        </div>
     {% endfor %}
-    </tr>
+    {% if forloop.counter|divisibleby:'4' %}<div class="clear"></div>{% endif %}
 {% endfor %}
-</table>
 {% endblock %}

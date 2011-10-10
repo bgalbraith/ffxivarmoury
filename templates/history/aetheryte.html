@@ -22,13 +22,18 @@
 {% endcomment %}
 
 {% block content %}
-<h1>{{ character.name }} ({{ count }}/{{ total }})</h1>
-<table cellpadding="0" cellspacing="5">
+<div class="grid_12">
+    <h3>Aetheryte ({{ count }}/{{ total }})</h3>
+</div>
+<div class="clear"></div>
 {% for zone in events %}
-    <tr><td><h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4></td></tr>
-    <tr>
+    <div class="grid_12">
+        <h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4>
+    </div>
+    <div class="clear"></div>
+
     {% for sub in zone.subs %}
-        <td valign="top">
+        <div class="grid_3">
         <div class="zone">
         {% if sub.achieved == sub.count %}
             <div id="zone-header-{{ sub.id }}" class="zone-header zone-complete">{{ sub.name }} <img style="float:right; padding-right:10px; margin-top:3px;" src="/static/img/brass_gobcog.png" /></div>
@@ -41,9 +46,9 @@
         {% endfor %}
         </div>
         </div>
-        </td>
+        </div>
+        {% if forloop.counter|divisibleby:'4' %}<div class="clear"></div>{% endif %}
     {% endfor %}
-    </tr>
+
 {% endfor %}
-</table>
 {% endblock %}

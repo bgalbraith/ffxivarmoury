@@ -2,26 +2,35 @@
 <html dir="ltr" lang="en-US">
 <head>
     <title>{% block title %}FFXIV Achievements{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/text.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/960.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/history.css" />
     {% block css %}{% endblock %}
     {% block js %}{% endblock %}
 </head>
 <body>
-<div id="content">
-<div id="nav">
-<div id="nav-charatcers">
+<div class="container_12">
+<div class="grid_12">
+<h1>FFXIV Armoury - Track your achievements</h1>
+<h2>{{ character.name }}</h2>
+</div>
+<div class="clear"></div>
+<div class="grid_12">
+<p>
 {% for character in characters %}
     {% if forloop.counter0 > 0 %} | {% endif %}
     <a href="/history/{{ type }}/{{ character.id }}">{{ character.name }}</a>
 {% endfor %}
+</p>
 </div>
-<div id="nav-types">
-    {% for type in types %}
-    {% if forloop.counter0 > 0 %} | {% endif %}
-    <a href="/history/{{ type.type|lower }}/{{ character.id }}">{{ type.type }}</a>
+<div class="clear"></div>
+{% for type in types %}
+<div class="grid_2">
+<p><a href="/history/{{ type.type|lower }}/{{ character.id }}">{{ type.type }}</a></p>
+</div>
 {% endfor %}
-</div>
-</div>
+<div class="clear"></div>
 {% block content %}
 {% endblock %}
 </div>

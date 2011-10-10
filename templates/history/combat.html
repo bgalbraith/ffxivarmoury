@@ -3,15 +3,17 @@
 {% block title %}FFXIV Achievements | Combat{% endblock %}
 
 {% block content %}
-<p style="font-size:small;"><a href="/history/combat/1">Zephan</a> | <a href="/history/combat/2">Arina</a> | <a href="/history/combat/3">Tyler</a> | <a href="/history/combat/4">Teia</a> | <a href="/history/combat/5">Miyuki</a></p>
-<p style="font-size:small;"><a href="/history/aetheryte/{{ character.id }}">Aetheryte</a> | <a href="/history/guild/{{ character.id }}">Guild</a> | <a href="/history/quest/{{ character.id }}">Quest</a> | <a href="/history/guildleve/{{ character.id }}">Guildleve</a> | <a href="/history/combat/{{ character.id }}">Combat</a> | <a href="/history/special/{{ character.id }}">Special</a></p>
-<h1>{{ character.name }} ({{ count }}/{{ total }})</h1>
-<table cellpadding="0" cellspacing="5">
+<div class="grid_12">
+<h3>Combat ({{ count }}/{{ total }})</h3>
+</div>
+<div class="clear"></div>
 {% for zone in events %}
-    <tr><td><h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4></td></tr>
-    <tr>
+    <div class="grid_12">
+    <h4>{{ zone.name }} ({{ zone.achieved }}/{{ zone.count }})</h4>
+    </div>
+    <div class="clear"></div>
     {% for sub in zone.subs %}
-        <td valign="top">
+        <div class="grid_3">
         <div class="zone">
         {% if sub.achieved == sub.count %}
             <div id="combat-group-header-{{ sub.id }}" class="combat-group-header combat-group-complete">{{ sub.name }} <img style="float:right; padding-right:10px; margin-top:3px;" src="/static/img/brass_gobcog.png" /></div>
@@ -20,17 +22,16 @@
         {% endif %}
         <div id="combat-group-{{ sub.id }}" class="combat-group-body">
         {% for event in sub.events %}
-            {% comment %}
             <div id="combat-event-{{ event.id }}" class="{{ event.event_class }}">{{ event.label }}</div>
-            {%  endcomment %}
+            {% comment %}
             <div style="width:75px;line-height:75px;background-color:#999;border: solid 1px black;float:left">&nbsp;</div>
             {% if forloop.counter|divisibleby:"4" %}<div style="clear:both;"></div>{% endif %}
+            {%  endcomment %}
         {% endfor %}
         </div>
         </div>
-        </td>
+        </div>
         {% endfor %}
-    </tr>
+        <div class="clear"></div>
 {% endfor %}
-</table>
 {% endblock %}
