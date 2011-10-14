@@ -61,7 +61,10 @@ p {
     padding-left: 5px;
     line-height: 26px;
 }
-
+.guild-complete {
+    color: #000;
+    background: url("/static/img/brass_texture.png") no-repeat;
+}
 div.guild-ranks ul {
     list-style: none;
     padding-top: 5px;

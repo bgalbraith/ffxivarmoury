@@ -43,6 +43,18 @@ INSERT INTO history_world VALUES
     (2, "Rabanastre"),
     (3, "Istory");
 
+INSERT INTO history_title VALUES
+    (1, "Party Leader", "The most total achievements", 1),
+    (2, "Trailblazer", "The most aetherytes visited", 1),
+    (3, "Sensei", "The most classes developed", 1),
+    (4, "Treasure Hunter", "The most quests completed", 1),
+    (5, "Journeyman", "The most guildleves completed", 1),
+    (6, "War Machine", "The most enemies defeated", 1),
+    (7, "Accomplished", "100 achievements", 0),
+    (8, "Heralded", "250 achievements", 0),
+    (9, "Heroic", "500 achievements", 0),
+    (10, "Legendary", "1000 achievements", 0);
+
 INSERT INTO history_eventgroup VALUES
     (1,"City-States",1,NULL,NULL,NULL),
     (2,"La Noscea",1,1,NULL,NULL),

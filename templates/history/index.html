@@ -2,11 +2,21 @@
 <html dir="ltr" lang="en-US">
 <head>
     <title>FFXIV Achievements</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/text.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/960.css" />
     <link rel="stylesheet" type="text/css" href="/static/css/history.css" />
 </head>
 <body>
+<div class="container_12">
+<div class="grid_12">
+    <h1>Rage Quit (Fabul)</h1>
+</div>
 {% for character in characters %}
-    <h1><a href="/history/aetheryte/{{ character.id }}">{{ character.name }} ({{ character.world }})</a> [{{ character.count }}/{{ total }}]</h1>
+    <div class="grid_12">
+        <h2><a href="/history/aetheryte/{{ character.id }}">{{ character.name }} ({{ character.world }})</a> [{{ character.count }}/{{ total }}]</h2>
+    </div>
 {% endfor %}
+</div>
 </body>
 </html>

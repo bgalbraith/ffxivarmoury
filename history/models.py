@@ -28,12 +28,18 @@ class Event(models.Model):
     group = models.ForeignKey(EventGroup)
     position = models.IntegerField()
 
+class Title(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=255)
+    unique = models.BooleanField()
+
 class Character(models.Model):
     name = models.CharField(max_length=100)
     world = models.ForeignKey(World)
     nation = models.ForeignKey(Nation)
     cicuid = models.IntegerField()
     events = models.ManyToManyField(Event, through='CharacterEvent')
+    titles = models.ManyToManyField(Title)
 
 class CharacterEvent(models.Model):
     character = models.ForeignKey(Character)
