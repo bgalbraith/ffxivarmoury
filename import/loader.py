@@ -80,6 +80,10 @@ for char in chars:
                     special = event[:-1]
                     num = char.events.filter(title__startswith=special).count()
                     event = "%s (%d)!" % (special, num + 1)
+                if event == "Partook in Foundation Day festivities!":
+                    special = event[:-1]
+                    num = char.events.filter(title__startswith=special).count()
+                    event = "%s (%d)!" % (special, num + 1)
 
                 e = Event.objects.get(title=event)
                 CharacterEvent(character=char, event=e, date_completed='2011-08-12').save()
