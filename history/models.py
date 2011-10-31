@@ -21,7 +21,7 @@ class EventGroup(models.Model):
     type = models.ForeignKey(EventType)
     region = models.ForeignKey(Region, null=True)
     guild = models.ForeignKey(Guild, null=True)
-    parent = models.ForeignKey("EventGroup")
+    parent = models.ForeignKey("EventGroup", null=True)
 
 class Event(models.Model):
     title = models.CharField(max_length=255)

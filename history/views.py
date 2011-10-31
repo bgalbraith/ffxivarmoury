@@ -23,7 +23,7 @@ def events(request, type_name, character_id):
     except Character.DoesNotExist:
         raise Http404
 
-    groups = type.eventgroup_set.filter(parent=0)
+    groups = type.eventgroup_set.filter(parent=None)
     history = character.events.filter(group__type=type.id)
     count = history.count()
     total = 0

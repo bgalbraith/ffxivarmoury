@@ -204,7 +204,8 @@ INSERT INTO history_eventgroup VALUES
     (146,"Imperial Assault",6,NULL,NULL,NULL),
     (147,"Hunter's Moon 2011",6,NULL,NULL,143),
     (148,"Foundation Day 2011",6,NULL,NULL,143),
-    (149,"Miscellaneous",3,NULL,NULL,NULL);
+    (149,"Miscellaneous",3,NULL,NULL,NULL),
+    (150,"All Saints Wake 2011",6,NULL,NULL,143);
 
 INSERT INTO history_event (title, group_id, position) VALUES
     ("Limsa Lominsa reached!",1,1),
@@ -791,6 +792,7 @@ INSERT INTO history_event (title, group_id, position) VALUES
     ("Hero of the Maelstrom",114,14),
     ("Hero of the Immortal Flames",115,14),
     ("Hero of the Twin Adder",116,14),
+    ("\"It Kills with Fire\" Complete!",149,5),
 
     ("Wanted: Palemoon Parazuzu complete!",118,1),
     ("Wanted: Rorogun the Tailtamer complete!",118,2),
@@ -897,6 +899,7 @@ INSERT INTO history_event (title, group_id, position) VALUES
     ("Sargas defeated!",141,2),
     ("Shaula defeated!",141,3),
     ("Batraal defeated!",141,4),
+    ("Ifrit defeated!",141,5),
 
     ("100 enemies defeated!",142,1),
     ("200 enemies defeated!",142,2),
@@ -930,6 +933,8 @@ INSERT INTO history_event (title, group_id, position) VALUES
     ("The Empire Strikes First",146,2),
     ("A Taste of Victory",146,3),
     ("Rhapsody in White",146,4),
+    ("Victory in the North",146,5),
+    ("Victory Beneath the Canopy",146,6),
     ("Observed Hunter's Moon (1)!",147,1),
     ("Observed Hunter's Moon (2)!",147,2),
     ("Partook in Foundation Day festivities (1)!",148,1),
@@ -937,7 +942,12 @@ INSERT INTO history_event (title, group_id, position) VALUES
     ("Partook in Foundation Day festivities (3)!",148,3),
     ("Partook in Foundation Day festivities (4)!",148,4),
     ("Partook in Foundation Day festivities (5)!",148,5),
-    ("Partook in Foundation Day festivities (6)!",148,6);
+    ("Partook in Foundation Day festivities (6)!",148,6),
+    ("Impish Impositions Complete!",150,1),
+    ("All Saints Wake reward (1) obtained!",150,2),
+    ("All Saints Wake reward (2) obtained!",150,3),
+    ("All Saints Wake reward (3) obtained!",150,4),
+    ("All Saints Wake reward (4) obtained!",150,5);
 
 INSERT INTO history_character VALUES
     (1, "Zephan Macrae", 1, 1, 2792272),
@@ -946,4 +956,4 @@ INSERT INTO history_character VALUES
     (4, "Teia Rabishu", 1, 1, 3202156),
     (5, "Miyuki Arabirae", 1, 2, 2152735),
     (6, "Bow Arrows", 1, 2, 1615144);
-    #(7, "Duuude Bismarck", 2, 3, 3691048);
+#    (7, "Duuude Bismarck", 2, 3, 3691048);
